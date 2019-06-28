@@ -12,13 +12,13 @@ p{
     background-color: white;
 	position: relative;
 	top: 30px;
-	outline:4px solid red;
+	outline:10px solid red;
 	font-size: 0;
 	margin:auto;
 	height:640px;
 	width:640px;
 	padding: 0;
-	border: none;
+    border: none;
 }
 
 .grid {
