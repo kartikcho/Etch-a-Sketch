@@ -47,6 +47,16 @@
             $(".grid").remove();
             createGrid(z);
             
+            $(".grid").mouseover(function() {
+                $(this).css("background-color", "grey");
+                });
+
+            $(".newGrid").click(function() {
+                
+                $(".grid").mouseover(function() {
+                $(this).css("background-color", "grey");
+                });
+            });
         };  
 
         // function prompts user to select the number of boxes for new grid
