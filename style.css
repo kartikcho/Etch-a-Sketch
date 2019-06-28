@@ -2,7 +2,11 @@ body{
     background-color: black;
 }
 h1{
+    color: orangered;
     font-size: 100px;
+}
+p{
+    color: darkgray;
 }
 #sketchcontainer {
     background-color: white;
@@ -23,4 +27,16 @@ h1{
 	border:none;
 	outline:1px solid #000;
 	display:inline-block;
+}
+button{
+    padding-left: 15px;
+    padding-right: 15px;
+    color: white;
+    background-color: red;
+    border: 1px solid red;
+}
+button:hover{
+    transition: ease-in 0.2s;
+    background-color: black;
+    color: white;
 }

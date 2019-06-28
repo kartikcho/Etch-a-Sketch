@@ -14,14 +14,18 @@
     <br>
     <div class="container-fluid">
         <h1 class=" text-center">Etch-A-Sketch</h1>
+        <center><p>-By Kartik Choudhary</p>
 
-        <center><button class="newGrid">New Grid</button></center>
+        <center><button onclick="clearGrid()">Reset Grid</button>
+
+        <button class="newGrid">Refresh Grid</button></center>
 
         <div id="sketchcontainer"></div>
 
-        <br><br>
+        <br><br><br>
 
     </div>
+
 
     <script>
 
@@ -43,7 +47,7 @@
 
         // function prompts user to select the number of boxes for new grid
         function refreshGrid(){
-            var z = prompt("How many boxes per side?");
+            var z = prompt("Enter a new grid size");
             clearGrid();
             createGrid(z);
         };
@@ -61,7 +65,7 @@
                 refreshGrid();
 
                 $(".grid").mouseover(function() {
-                $(this).css("background-color", "black");
+                $(this).css("background-color", "grey");
                 });
             });
         });
