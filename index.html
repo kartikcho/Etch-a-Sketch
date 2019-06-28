@@ -29,6 +29,8 @@
 
     <script>
 
+        var z = 16;
+
         // function builds grid
         function createGrid(x) {
             for (var rows = 0; rows < x; rows++) {
@@ -43,11 +45,13 @@
         // function clears grid
         function clearGrid(){
             $(".grid").remove();
+            createGrid(z);
+            
         };  
 
         // function prompts user to select the number of boxes for new grid
         function refreshGrid(){
-            var z = prompt("Enter a new grid size");
+            z = prompt("Enter a new grid size");
             clearGrid();
             createGrid(z);
         };
@@ -55,6 +59,7 @@
         // create a 16x16 grid when page loads
         // hover effect used to draw on grid
         $(document).ready(function() {
+            
             createGrid(16);
 
             $(".grid").mouseover(function() {
