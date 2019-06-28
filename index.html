@@ -4,6 +4,7 @@
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
     <title>Etch A Sketch</title>
 
@@ -12,11 +13,61 @@
 <body>
     <br>
     <div class="container-fluid">
-        <h1 class="jumbotron jumbotron-fluid text-center">Etch-A-Sketch</h1>
+        <h1 class=" text-center">Etch-A-Sketch</h1>
 
+        <center><button class="newGrid">New Grid</button></center>
 
+        <div id="sketchcontainer"></div>
+
+        <br><br>
 
     </div>
+
+    <script>
+
+        // function builds grid
+        function createGrid(x) {
+            for (var rows = 0; rows < x; rows++) {
+                for (var columns = 0; columns < x; columns++) {
+                    $("#sketchcontainer").append("<div class='grid'></div>");
+                };
+            };
+            $(".grid").width(640/x);
+            $(".grid").height(640/x);
+        };
+
+        // function clears grid
+        function clearGrid(){
+            $(".grid").remove();
+        };  
+
+        // function prompts user to select the number of boxes for new grid
+        function refreshGrid(){
+            var z = prompt("How many boxes per side?");
+            clearGrid();
+            createGrid(z);
+        };
+
+        // create a 16x16 grid when page loads
+        // hover effect used to draw on grid
+        $(document).ready(function() {
+            createGrid(16);
+
+            $(".grid").mouseover(function() {
+                $(this).css("background-color", "grey");
+                });
+
+            $(".newGrid").click(function() {
+                refreshGrid();
+
+                $(".grid").mouseover(function() {
+                $(this).css("background-color", "black");
+                });
+            });
+        });
+
+    </script>
+
 </body>
 
 </html>
